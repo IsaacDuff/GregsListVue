@@ -14,6 +14,14 @@ class HousesService {
         logger.log('mapped houses', AppState.houses)
 
     }
+
+    async getHouseById(houseId) {
+        AppState.house = null
+        const res = await api.get('auth/api/houses/' + houseId)
+        logger.log('got one house', res.data)
+        AppState.house = new House(res.data)
+
+    }
 }
 
 export const housesService = new HousesService()
