@@ -6,12 +6,27 @@
                 <h2> {{ 'Bedrooms:' + house.bedrooms + ' ' + '|' + ' ' + 'Bathrooms:' + house.bathrooms + ' ' + '|' + ' ' +
                     'Levels:' + house.bedrooms }}</h2>
             </div>
+            <div v-if="route.name == 'HouseDetails'" class="p-3">
+                <div>
+                    <h2>{{ house.price }}</h2>
+                </div>
+            </div>
         </div>
     </router-link>
 </template>
 
 
-
+<!-- <div v-if="route.name == 'CarDetails'" class="p-4">
+    <div class="d-flex justify-content-around">
+      <h2>{{ car.year }}</h2>
+      <h2>{{ car.price }}</h2>
+    </div>
+    <p class="fw-bold fs-3">{{ car.description }}</p>
+    <div v-if="car.creatorId == account.id" class="d-flex justify-content-around">
+      <button class="btn btn-danger" @click.stop="deleteCar()">Delete Car!</button>
+      <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">🖊️ Edit Car</button>
+    </div>
+  </div> -->
 
 
 
